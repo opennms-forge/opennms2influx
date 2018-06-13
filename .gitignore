@@ -1,0 +1,11 @@
+.classpath
+.project
+
+*.iml
+.idea
+*.swp
+
+target/
+
+# My scripts
+*.sh
