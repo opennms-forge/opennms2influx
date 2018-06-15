@@ -29,6 +29,7 @@
 package org.opennms.opennms2influx;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Properties;
 import java.util.stream.Collectors;
 
@@ -39,6 +40,9 @@ import org.apache.kafka.streams.StreamsBuilder;
 import org.apache.kafka.streams.StreamsConfig;
 import org.apache.kafka.streams.kstream.KStream;
 import org.apache.kafka.streams.kstream.Produced;
+import org.influxdb.InfluxDB;
+import org.influxdb.InfluxDBFactory;
+import org.influxdb.dto.BatchPoints;
 import org.influxdb.dto.Point;
 import org.opennms.features.kafka.collection.persistence.CollectionSetProtos;
 import org.slf4j.Logger;
@@ -51,12 +55,19 @@ public class TSDB {
     private static final Logger LOG = LoggerFactory.getLogger(TSDB.class);
 
     public static void main(String[] args) {
+
+        InfluxDB influxDB = InfluxDBFactory.connect("http://127.0.0.1:8086", "root", "root");
+        String dbName = "opennms";
+        influxDB.createDatabase(dbName);
+        String rpName = "aRetentionPolicy";
+        influxDB.createRetentionPolicy(rpName, dbName, "30d", "30m", 1, true);
+
         final String bootstrapServers = args.length > 0 ? args[0] : "localhost:9092";
         final Properties streamsConfiguration = new Properties();
         // Give the Streams application a unique name.  The name must be unique in the Kafka cluster
         // against which the application is run.
-        streamsConfiguration.put(StreamsConfig.APPLICATION_ID_CONFIG, "opennms2influx");
-        streamsConfiguration.put(StreamsConfig.CLIENT_ID_CONFIG, "opennms2influx-client");
+        streamsConfiguration.put(StreamsConfig.APPLICATION_ID_CONFIG, "opennms2influx2");
+        streamsConfiguration.put(StreamsConfig.CLIENT_ID_CONFIG, "opennms2influx-client2");
         // Where to find Kafka broker(s).
         streamsConfiguration.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
         // Specify default (de)serializers for record keys and for record values.
@@ -64,22 +75,32 @@ public class TSDB {
         streamsConfiguration.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, Serdes.ByteArray().getClass().getName());
 
         final CollectionSetMapper mapper = new CollectionSetMapper();
-        final Serde<String> stringSerde = Serdes.String();
 
         final StreamsBuilder builder = new StreamsBuilder();
         final KStream<String, byte[]> collectionSets = builder.stream("collection");
-        final KStream<String, String> points = collectionSets.mapValues((key,bytes) -> {
+        final KStream<String, List<Point>> points = collectionSets.mapValues((key, bytes) -> {
             try {
                 final CollectionSetProtos.CollectionSet collectionSet = CollectionSetProtos.CollectionSet.parseFrom(bytes);
-                return mapper.toPoints(collectionSet).stream()
-                        .map(Point::lineProtocol)
-                        .collect(Collectors.joining ("\n"));
+
+                return mapper.toPoints(collectionSet);
             } catch (InvalidProtocolBufferException e) {
                 LOG.error("Failed to decode collection set from byte array: {}", Arrays.toString(bytes), e);
                 return null;
             }
         });
-        points.filter((k,v) -> v != null && v.length() > 0).to("influx", Produced.with(stringSerde, stringSerde));
+        points.filter((k,v) -> v != null && v.size() > 0)
+                .foreach((k,v) -> {
+                    LOG.info("Writing {} points.", v.size());
+                    BatchPoints batchPoints = BatchPoints
+                            .database(dbName)
+                            .retentionPolicy(rpName)
+                            .consistency(InfluxDB.ConsistencyLevel.ALL)
+                            .build();
+
+                    v.forEach(batchPoints::point);
+                    influxDB.write(batchPoints);
+                    LOG.info("Wrote {} points.", v.size());
+                });
 
         final KafkaStreams streams = new KafkaStreams(builder.build(), streamsConfiguration);
         streams.cleanUp();
