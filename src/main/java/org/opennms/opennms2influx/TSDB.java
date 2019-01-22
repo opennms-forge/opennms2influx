@@ -31,15 +31,12 @@ package org.opennms.opennms2influx;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
-import java.util.stream.Collectors;
 
-import org.apache.kafka.common.serialization.Serde;
 import org.apache.kafka.common.serialization.Serdes;
 import org.apache.kafka.streams.KafkaStreams;
 import org.apache.kafka.streams.StreamsBuilder;
 import org.apache.kafka.streams.StreamsConfig;
 import org.apache.kafka.streams.kstream.KStream;
-import org.apache.kafka.streams.kstream.Produced;
 import org.influxdb.InfluxDB;
 import org.influxdb.InfluxDBFactory;
 import org.influxdb.dto.BatchPoints;
@@ -77,7 +74,7 @@ public class TSDB {
         final CollectionSetMapper mapper = new CollectionSetMapper();
 
         final StreamsBuilder builder = new StreamsBuilder();
-        final KStream<String, byte[]> collectionSets = builder.stream("collection");
+        final KStream<String, byte[]> collectionSets = builder.stream("metrics");
         final KStream<String, List<Point>> points = collectionSets.mapValues((key, bytes) -> {
             try {
                 final CollectionSetProtos.CollectionSet collectionSet = CollectionSetProtos.CollectionSet.parseFrom(bytes);

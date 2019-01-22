@@ -4169,6 +4169,668 @@ public final class CollectionSetProtos {
 
   }
 
+  public interface ResponseTimeResourceOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:ResponseTimeResource)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string instance = 1;</code>
+     */
+    java.lang.String getInstance();
+    /**
+     * <code>string instance = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getInstanceBytes();
+
+    /**
+     * <code>string location = 2;</code>
+     */
+    java.lang.String getLocation();
+    /**
+     * <code>string location = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getLocationBytes();
+  }
+  /**
+   * Protobuf type {@code ResponseTimeResource}
+   */
+  public  static final class ResponseTimeResource extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:ResponseTimeResource)
+      ResponseTimeResourceOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ResponseTimeResource.newBuilder() to construct.
+    private ResponseTimeResource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ResponseTimeResource() {
+      instance_ = "";
+      location_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ResponseTimeResource(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              instance_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              location_ = s;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.opennms.features.kafka.collection.persistence.CollectionSetProtos.internal_static_ResponseTimeResource_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.opennms.features.kafka.collection.persistence.CollectionSetProtos.internal_static_ResponseTimeResource_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource.class, org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource.Builder.class);
+    }
+
+    public static final int INSTANCE_FIELD_NUMBER = 1;
+    private volatile java.lang.Object instance_;
+    /**
+     * <code>string instance = 1;</code>
+     */
+    public java.lang.String getInstance() {
+      java.lang.Object ref = instance_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        instance_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string instance = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getInstanceBytes() {
+      java.lang.Object ref = instance_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        instance_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int LOCATION_FIELD_NUMBER = 2;
+    private volatile java.lang.Object location_;
+    /**
+     * <code>string location = 2;</code>
+     */
+    public java.lang.String getLocation() {
+      java.lang.Object ref = location_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        location_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string location = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getLocationBytes() {
+      java.lang.Object ref = location_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        location_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getInstanceBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, instance_);
+      }
+      if (!getLocationBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, location_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getInstanceBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, instance_);
+      }
+      if (!getLocationBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, location_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource)) {
+        return super.equals(obj);
+      }
+      org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource other = (org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource) obj;
+
+      boolean result = true;
+      result = result && getInstance()
+          .equals(other.getInstance());
+      result = result && getLocation()
+          .equals(other.getLocation());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + INSTANCE_FIELD_NUMBER;
+      hash = (53 * hash) + getInstance().hashCode();
+      hash = (37 * hash) + LOCATION_FIELD_NUMBER;
+      hash = (53 * hash) + getLocation().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code ResponseTimeResource}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:ResponseTimeResource)
+        org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResourceOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.opennms.features.kafka.collection.persistence.CollectionSetProtos.internal_static_ResponseTimeResource_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.opennms.features.kafka.collection.persistence.CollectionSetProtos.internal_static_ResponseTimeResource_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource.class, org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource.Builder.class);
+      }
+
+      // Construct using org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        instance_ = "";
+
+        location_ = "";
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.opennms.features.kafka.collection.persistence.CollectionSetProtos.internal_static_ResponseTimeResource_descriptor;
+      }
+
+      public org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource getDefaultInstanceForType() {
+        return org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource.getDefaultInstance();
+      }
+
+      public org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource build() {
+        org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource buildPartial() {
+        org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource result = new org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource(this);
+        result.instance_ = instance_;
+        result.location_ = location_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource) {
+          return mergeFrom((org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource other) {
+        if (other == org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource.getDefaultInstance()) return this;
+        if (!other.getInstance().isEmpty()) {
+          instance_ = other.instance_;
+          onChanged();
+        }
+        if (!other.getLocation().isEmpty()) {
+          location_ = other.location_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object instance_ = "";
+      /**
+       * <code>string instance = 1;</code>
+       */
+      public java.lang.String getInstance() {
+        java.lang.Object ref = instance_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          instance_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string instance = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getInstanceBytes() {
+        java.lang.Object ref = instance_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          instance_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string instance = 1;</code>
+       */
+      public Builder setInstance(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        instance_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string instance = 1;</code>
+       */
+      public Builder clearInstance() {
+        
+        instance_ = getDefaultInstance().getInstance();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string instance = 1;</code>
+       */
+      public Builder setInstanceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        instance_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object location_ = "";
+      /**
+       * <code>string location = 2;</code>
+       */
+      public java.lang.String getLocation() {
+        java.lang.Object ref = location_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          location_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string location = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getLocationBytes() {
+        java.lang.Object ref = location_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          location_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string location = 2;</code>
+       */
+      public Builder setLocation(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        location_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string location = 2;</code>
+       */
+      public Builder clearLocation() {
+        
+        location_ = getDefaultInstance().getLocation();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string location = 2;</code>
+       */
+      public Builder setLocationBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        location_ = value;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:ResponseTimeResource)
+    }
+
+    // @@protoc_insertion_point(class_scope:ResponseTimeResource)
+    private static final org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource();
+    }
+
+    public static org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ResponseTimeResource>
+        PARSER = new com.google.protobuf.AbstractParser<ResponseTimeResource>() {
+      public ResponseTimeResource parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ResponseTimeResource(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ResponseTimeResource> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ResponseTimeResource> getParserForType() {
+      return PARSER;
+    }
+
+    public org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface CollectionSetResourceOrBuilder extends
       // @@protoc_insertion_point(interface_extends:CollectionSetResource)
       com.google.protobuf.MessageOrBuilder {
@@ -4211,6 +4873,19 @@ public final class CollectionSetProtos {
      * <code>.GenericTypeResource generic = 3;</code>
      */
     org.opennms.features.kafka.collection.persistence.CollectionSetProtos.GenericTypeResourceOrBuilder getGenericOrBuilder();
+
+    /**
+     * <code>.ResponseTimeResource response = 4;</code>
+     */
+    boolean hasResponse();
+    /**
+     * <code>.ResponseTimeResource response = 4;</code>
+     */
+    org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource getResponse();
+    /**
+     * <code>.ResponseTimeResource response = 4;</code>
+     */
+    org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResourceOrBuilder getResponseOrBuilder();
 
     /**
      * <code>repeated .StringAttribute string = 10;</code>
@@ -4352,19 +5027,33 @@ public final class CollectionSetProtos {
               resourceCase_ = 3;
               break;
             }
+            case 34: {
+              org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource.Builder subBuilder = null;
+              if (resourceCase_ == 4) {
+                subBuilder = ((org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource) resource_).toBuilder();
+              }
+              resource_ =
+                  input.readMessage(org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource) resource_);
+                resource_ = subBuilder.buildPartial();
+              }
+              resourceCase_ = 4;
+              break;
+            }
             case 82: {
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
                 string_ = new java.util.ArrayList<org.opennms.features.kafka.collection.persistence.CollectionSetProtos.StringAttribute>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000010;
               }
               string_.add(
                   input.readMessage(org.opennms.features.kafka.collection.persistence.CollectionSetProtos.StringAttribute.parser(), extensionRegistry));
               break;
             }
             case 90: {
-              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
                 numeric_ = new java.util.ArrayList<org.opennms.features.kafka.collection.persistence.CollectionSetProtos.NumericAttribute>();
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000020;
               }
               numeric_.add(
                   input.readMessage(org.opennms.features.kafka.collection.persistence.CollectionSetProtos.NumericAttribute.parser(), extensionRegistry));
@@ -4378,10 +5067,10 @@ public final class CollectionSetProtos {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
           string_ = java.util.Collections.unmodifiableList(string_);
         }
-        if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+        if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
           numeric_ = java.util.Collections.unmodifiableList(numeric_);
         }
         this.unknownFields = unknownFields.build();
@@ -4408,6 +5097,7 @@ public final class CollectionSetProtos {
       NODE(1),
       INTERFACE(2),
       GENERIC(3),
+      RESPONSE(4),
       RESOURCE_NOT_SET(0);
       private final int value;
       private ResourceCase(int value) {
@@ -4426,6 +5116,7 @@ public final class CollectionSetProtos {
           case 1: return NODE;
           case 2: return INTERFACE;
           case 3: return GENERIC;
+          case 4: return RESPONSE;
           case 0: return RESOURCE_NOT_SET;
           default: return null;
         }
@@ -4519,6 +5210,32 @@ public final class CollectionSetProtos {
       return org.opennms.features.kafka.collection.persistence.CollectionSetProtos.GenericTypeResource.getDefaultInstance();
     }
 
+    public static final int RESPONSE_FIELD_NUMBER = 4;
+    /**
+     * <code>.ResponseTimeResource response = 4;</code>
+     */
+    public boolean hasResponse() {
+      return resourceCase_ == 4;
+    }
+    /**
+     * <code>.ResponseTimeResource response = 4;</code>
+     */
+    public org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource getResponse() {
+      if (resourceCase_ == 4) {
+         return (org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource) resource_;
+      }
+      return org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource.getDefaultInstance();
+    }
+    /**
+     * <code>.ResponseTimeResource response = 4;</code>
+     */
+    public org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResourceOrBuilder getResponseOrBuilder() {
+      if (resourceCase_ == 4) {
+         return (org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource) resource_;
+      }
+      return org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource.getDefaultInstance();
+    }
+
     public static final int STRING_FIELD_NUMBER = 10;
     private java.util.List<org.opennms.features.kafka.collection.persistence.CollectionSetProtos.StringAttribute> string_;
     /**
@@ -4610,6 +5327,9 @@ public final class CollectionSetProtos {
       if (resourceCase_ == 3) {
         output.writeMessage(3, (org.opennms.features.kafka.collection.persistence.CollectionSetProtos.GenericTypeResource) resource_);
       }
+      if (resourceCase_ == 4) {
+        output.writeMessage(4, (org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource) resource_);
+      }
       for (int i = 0; i < string_.size(); i++) {
         output.writeMessage(10, string_.get(i));
       }
@@ -4635,6 +5355,10 @@ public final class CollectionSetProtos {
       if (resourceCase_ == 3) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, (org.opennms.features.kafka.collection.persistence.CollectionSetProtos.GenericTypeResource) resource_);
+      }
+      if (resourceCase_ == 4) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, (org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource) resource_);
       }
       for (int i = 0; i < string_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
@@ -4680,6 +5404,10 @@ public final class CollectionSetProtos {
           result = result && getGeneric()
               .equals(other.getGeneric());
           break;
+        case 4:
+          result = result && getResponse()
+              .equals(other.getResponse());
+          break;
         case 0:
         default:
       }
@@ -4714,6 +5442,10 @@ public final class CollectionSetProtos {
         case 3:
           hash = (37 * hash) + GENERIC_FIELD_NUMBER;
           hash = (53 * hash) + getGeneric().hashCode();
+          break;
+        case 4:
+          hash = (37 * hash) + RESPONSE_FIELD_NUMBER;
+          hash = (53 * hash) + getResponse().hashCode();
           break;
         case 0:
         default:
@@ -4851,13 +5583,13 @@ public final class CollectionSetProtos {
         super.clear();
         if (stringBuilder_ == null) {
           string_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           stringBuilder_.clear();
         }
         if (numericBuilder_ == null) {
           numeric_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
           numericBuilder_.clear();
         }
@@ -4908,19 +5640,26 @@ public final class CollectionSetProtos {
             result.resource_ = genericBuilder_.build();
           }
         }
+        if (resourceCase_ == 4) {
+          if (responseBuilder_ == null) {
+            result.resource_ = resource_;
+          } else {
+            result.resource_ = responseBuilder_.build();
+          }
+        }
         if (stringBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) == 0x00000008)) {
+          if (((bitField0_ & 0x00000010) == 0x00000010)) {
             string_ = java.util.Collections.unmodifiableList(string_);
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000010);
           }
           result.string_ = string_;
         } else {
           result.string_ = stringBuilder_.build();
         }
         if (numericBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) == 0x00000010)) {
+          if (((bitField0_ & 0x00000020) == 0x00000020)) {
             numeric_ = java.util.Collections.unmodifiableList(numeric_);
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
           }
           result.numeric_ = numeric_;
         } else {
@@ -4973,7 +5712,7 @@ public final class CollectionSetProtos {
           if (!other.string_.isEmpty()) {
             if (string_.isEmpty()) {
               string_ = other.string_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000010);
             } else {
               ensureStringIsMutable();
               string_.addAll(other.string_);
@@ -4986,7 +5725,7 @@ public final class CollectionSetProtos {
               stringBuilder_.dispose();
               stringBuilder_ = null;
               string_ = other.string_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000010);
               stringBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getStringFieldBuilder() : null;
@@ -4999,7 +5738,7 @@ public final class CollectionSetProtos {
           if (!other.numeric_.isEmpty()) {
             if (numeric_.isEmpty()) {
               numeric_ = other.numeric_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000020);
             } else {
               ensureNumericIsMutable();
               numeric_.addAll(other.numeric_);
@@ -5012,7 +5751,7 @@ public final class CollectionSetProtos {
               numericBuilder_.dispose();
               numericBuilder_ = null;
               numeric_ = other.numeric_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000020);
               numericBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getNumericFieldBuilder() : null;
@@ -5032,6 +5771,10 @@ public final class CollectionSetProtos {
           }
           case GENERIC: {
             mergeGeneric(other.getGeneric());
+            break;
+          }
+          case RESPONSE: {
+            mergeResponse(other.getResponse());
             break;
           }
           case RESOURCE_NOT_SET: {
@@ -5489,12 +6232,148 @@ public final class CollectionSetProtos {
         return genericBuilder_;
       }
 
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource, org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource.Builder, org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResourceOrBuilder> responseBuilder_;
+      /**
+       * <code>.ResponseTimeResource response = 4;</code>
+       */
+      public boolean hasResponse() {
+        return resourceCase_ == 4;
+      }
+      /**
+       * <code>.ResponseTimeResource response = 4;</code>
+       */
+      public org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource getResponse() {
+        if (responseBuilder_ == null) {
+          if (resourceCase_ == 4) {
+            return (org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource) resource_;
+          }
+          return org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource.getDefaultInstance();
+        } else {
+          if (resourceCase_ == 4) {
+            return responseBuilder_.getMessage();
+          }
+          return org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ResponseTimeResource response = 4;</code>
+       */
+      public Builder setResponse(org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource value) {
+        if (responseBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          resource_ = value;
+          onChanged();
+        } else {
+          responseBuilder_.setMessage(value);
+        }
+        resourceCase_ = 4;
+        return this;
+      }
+      /**
+       * <code>.ResponseTimeResource response = 4;</code>
+       */
+      public Builder setResponse(
+          org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource.Builder builderForValue) {
+        if (responseBuilder_ == null) {
+          resource_ = builderForValue.build();
+          onChanged();
+        } else {
+          responseBuilder_.setMessage(builderForValue.build());
+        }
+        resourceCase_ = 4;
+        return this;
+      }
+      /**
+       * <code>.ResponseTimeResource response = 4;</code>
+       */
+      public Builder mergeResponse(org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource value) {
+        if (responseBuilder_ == null) {
+          if (resourceCase_ == 4 &&
+              resource_ != org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource.getDefaultInstance()) {
+            resource_ = org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource.newBuilder((org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource) resource_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            resource_ = value;
+          }
+          onChanged();
+        } else {
+          if (resourceCase_ == 4) {
+            responseBuilder_.mergeFrom(value);
+          }
+          responseBuilder_.setMessage(value);
+        }
+        resourceCase_ = 4;
+        return this;
+      }
+      /**
+       * <code>.ResponseTimeResource response = 4;</code>
+       */
+      public Builder clearResponse() {
+        if (responseBuilder_ == null) {
+          if (resourceCase_ == 4) {
+            resourceCase_ = 0;
+            resource_ = null;
+            onChanged();
+          }
+        } else {
+          if (resourceCase_ == 4) {
+            resourceCase_ = 0;
+            resource_ = null;
+          }
+          responseBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.ResponseTimeResource response = 4;</code>
+       */
+      public org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource.Builder getResponseBuilder() {
+        return getResponseFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.ResponseTimeResource response = 4;</code>
+       */
+      public org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResourceOrBuilder getResponseOrBuilder() {
+        if ((resourceCase_ == 4) && (responseBuilder_ != null)) {
+          return responseBuilder_.getMessageOrBuilder();
+        } else {
+          if (resourceCase_ == 4) {
+            return (org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource) resource_;
+          }
+          return org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ResponseTimeResource response = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource, org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource.Builder, org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResourceOrBuilder> 
+          getResponseFieldBuilder() {
+        if (responseBuilder_ == null) {
+          if (!(resourceCase_ == 4)) {
+            resource_ = org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource.getDefaultInstance();
+          }
+          responseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource, org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource.Builder, org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResourceOrBuilder>(
+                  (org.opennms.features.kafka.collection.persistence.CollectionSetProtos.ResponseTimeResource) resource_,
+                  getParentForChildren(),
+                  isClean());
+          resource_ = null;
+        }
+        resourceCase_ = 4;
+        onChanged();;
+        return responseBuilder_;
+      }
+
       private java.util.List<org.opennms.features.kafka.collection.persistence.CollectionSetProtos.StringAttribute> string_ =
         java.util.Collections.emptyList();
       private void ensureStringIsMutable() {
-        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
           string_ = new java.util.ArrayList<org.opennms.features.kafka.collection.persistence.CollectionSetProtos.StringAttribute>(string_);
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000010;
          }
       }
 
@@ -5644,7 +6523,7 @@ public final class CollectionSetProtos {
       public Builder clearString() {
         if (stringBuilder_ == null) {
           string_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000010);
           onChanged();
         } else {
           stringBuilder_.clear();
@@ -5721,7 +6600,7 @@ public final class CollectionSetProtos {
           stringBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               org.opennms.features.kafka.collection.persistence.CollectionSetProtos.StringAttribute, org.opennms.features.kafka.collection.persistence.CollectionSetProtos.StringAttribute.Builder, org.opennms.features.kafka.collection.persistence.CollectionSetProtos.StringAttributeOrBuilder>(
                   string_,
-                  ((bitField0_ & 0x00000008) == 0x00000008),
+                  ((bitField0_ & 0x00000010) == 0x00000010),
                   getParentForChildren(),
                   isClean());
           string_ = null;
@@ -5732,9 +6611,9 @@ public final class CollectionSetProtos {
       private java.util.List<org.opennms.features.kafka.collection.persistence.CollectionSetProtos.NumericAttribute> numeric_ =
         java.util.Collections.emptyList();
       private void ensureNumericIsMutable() {
-        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+        if (!((bitField0_ & 0x00000020) == 0x00000020)) {
           numeric_ = new java.util.ArrayList<org.opennms.features.kafka.collection.persistence.CollectionSetProtos.NumericAttribute>(numeric_);
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
          }
       }
 
@@ -5884,7 +6763,7 @@ public final class CollectionSetProtos {
       public Builder clearNumeric() {
         if (numericBuilder_ == null) {
           numeric_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000020);
           onChanged();
         } else {
           numericBuilder_.clear();
@@ -5961,7 +6840,7 @@ public final class CollectionSetProtos {
           numericBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               org.opennms.features.kafka.collection.persistence.CollectionSetProtos.NumericAttribute, org.opennms.features.kafka.collection.persistence.CollectionSetProtos.NumericAttribute.Builder, org.opennms.features.kafka.collection.persistence.CollectionSetProtos.NumericAttributeOrBuilder>(
                   numeric_,
-                  ((bitField0_ & 0x00000010) == 0x00000010),
+                  ((bitField0_ & 0x00000020) == 0x00000020),
                   getParentForChildren(),
                   isClean());
           numeric_ = null;
@@ -6867,6 +7746,11 @@ public final class CollectionSetProtos {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_GenericTypeResource_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ResponseTimeResource_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ResponseTimeResource_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CollectionSetResource_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -6897,16 +7781,19 @@ public final class CollectionSetProtos {
       "\0132\022.NodeLevelResource\022\020\n\010instance\030\002 \001(\t\"" +
       "W\n\023GenericTypeResource\022 \n\004node\030\001 \001(\0132\022.N" +
       "odeLevelResource\022\014\n\004type\030\002 \001(\t\022\020\n\010instan" +
-      "ce\030\003 \001(\t\"\344\001\n\025CollectionSetResource\022\"\n\004no" +
-      "de\030\001 \001(\0132\022.NodeLevelResourceH\000\022,\n\tinterf" +
-      "ace\030\002 \001(\0132\027.InterfaceLevelResourceH\000\022\'\n\007" +
-      "generic\030\003 \001(\0132\024.GenericTypeResourceH\000\022 \n" +
-      "\006string\030\n \003(\0132\020.StringAttribute\022\"\n\007numer" +
-      "ic\030\013 \003(\0132\021.NumericAttributeB\n\n\010resource\"" +
-      "L\n\rCollectionSet\022\021\n\ttimestamp\030\001 \001(\003\022(\n\010r" +
-      "esource\030\002 \003(\0132\026.CollectionSetResourceBH\n" +
-      "1org.opennms.features.kafka.collection.p" +
-      "ersistenceB\023CollectionSetProtosb\006proto3"
+      "ce\030\003 \001(\t\":\n\024ResponseTimeResource\022\020\n\010inst" +
+      "ance\030\001 \001(\t\022\020\n\010location\030\002 \001(\t\"\217\002\n\025Collect" +
+      "ionSetResource\022\"\n\004node\030\001 \001(\0132\022.NodeLevel" +
+      "ResourceH\000\022,\n\tinterface\030\002 \001(\0132\027.Interfac" +
+      "eLevelResourceH\000\022\'\n\007generic\030\003 \001(\0132\024.Gene" +
+      "ricTypeResourceH\000\022)\n\010response\030\004 \001(\0132\025.Re" +
+      "sponseTimeResourceH\000\022 \n\006string\030\n \003(\0132\020.S" +
+      "tringAttribute\022\"\n\007numeric\030\013 \003(\0132\021.Numeri" +
+      "cAttributeB\n\n\010resource\"L\n\rCollectionSet\022" +
+      "\021\n\ttimestamp\030\001 \001(\003\022(\n\010resource\030\002 \003(\0132\026.C" +
+      "ollectionSetResourceBH\n1org.opennms.feat" +
+      "ures.kafka.collection.persistenceB\023Colle" +
+      "ctionSetProtosb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -6950,14 +7837,20 @@ public final class CollectionSetProtos {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GenericTypeResource_descriptor,
         new java.lang.String[] { "Node", "Type", "Instance", });
-    internal_static_CollectionSetResource_descriptor =
+    internal_static_ResponseTimeResource_descriptor =
       getDescriptor().getMessageTypes().get(5);
+    internal_static_ResponseTimeResource_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ResponseTimeResource_descriptor,
+        new java.lang.String[] { "Instance", "Location", });
+    internal_static_CollectionSetResource_descriptor =
+      getDescriptor().getMessageTypes().get(6);
     internal_static_CollectionSetResource_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CollectionSetResource_descriptor,
-        new java.lang.String[] { "Node", "Interface", "Generic", "String", "Numeric", "Resource", });
+        new java.lang.String[] { "Node", "Interface", "Generic", "Response", "String", "Numeric", "Resource", });
     internal_static_CollectionSet_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_CollectionSet_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CollectionSet_descriptor,
